@@ -45,6 +45,12 @@ typedef void (^Completion)(NSInteger result);
 
 %end
 
+// Bypass the config file version check
+int (*checkConfigFileVersion)(int);
+%hookf(int, checkConfigFileVersion, int arg) {
+    return 1;
+}
+
 %end
 
 %group translationd_voiceType
@@ -82,6 +88,8 @@ FOUNDATION_EXPORT char ***_NSGetArgv();
             _LTVoiceTypeLocaleOverride = (NSInteger (*)(NSInteger, NSLocale *))MSFindSymbol(ref, "__LTVoiceTypeLocaleOverride");
             %init(translationd_voiceType);
         }
+        MSImageRef ear = MSGetImageByName("/System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/EmbeddedAcousticRecognition");
+        checkConfigFileVersion = (int (*)(int))MSFindSymbol(ear, "__ZN6quasar12SystemConfig22checkConfigFileVersionEv");
         %init(translationd);
     } else {
         %init(mobileassetd);
