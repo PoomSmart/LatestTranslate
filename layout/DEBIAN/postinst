@@ -1,9 +1,17 @@
 #!/bin/bash
 
+BUNDLE_PATH="/Library/Application Support/LatestTranslate"
+
 echo "Removing translation v6 assets..."
 rm -rf /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets6
 
-cp -r /var/jb/Library/Application\ Support/LatestTranslate/com_apple_MobileAsset_SpeechTranslationAssets6 /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets6
+if [[ -d $BUNDLE_PATH ]];
+then
+    cp -r "$BUNDLE_PATH/com_apple_MobileAsset_SpeechTranslationAssets6" /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets6
+elif [[ -d "/var/jb$BUNDLE_PATH" ]]
+then
+    cp -r "/var/jb$BUNDLE_PATH/com_apple_MobileAsset_SpeechTranslationAssets6" /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets6
+fi
 
 echo "Killing translationd and mobileassetd..."
 killall -9 translationd || true
