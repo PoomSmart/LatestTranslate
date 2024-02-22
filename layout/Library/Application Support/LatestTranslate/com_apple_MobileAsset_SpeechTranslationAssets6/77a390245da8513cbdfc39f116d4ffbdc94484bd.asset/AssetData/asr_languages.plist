@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>CFBundleVersion</key>
+		<string>1.0</string>
+		<key>_all</key>
+		<array>
+			<string>ar_AE</string>
+			<string>de_DE</string>
+			<string>en_GB</string>
+			<string>en_US</string>
+			<string>es_ES</string>
+			<string>fr_FR</string>
+			<string>id_ID</string>
+			<string>it_IT</string>
+			<string>ja_JP</string>
+			<string>ko_KR</string>
+			<string>nl_NL</string>
+			<string>pl_PL</string>
+			<string>pt_BR</string>
+			<string>ru_RU</string>
+			<string>th_TH</string>
+			<string>tr_TR</string>
+			<string>uk_UA</string>
+			<string>vi_VN</string>
+			<string>zh_CN</string>
+			<string>zh_TW</string>
+		</array>
+	</dict>
+</plist>

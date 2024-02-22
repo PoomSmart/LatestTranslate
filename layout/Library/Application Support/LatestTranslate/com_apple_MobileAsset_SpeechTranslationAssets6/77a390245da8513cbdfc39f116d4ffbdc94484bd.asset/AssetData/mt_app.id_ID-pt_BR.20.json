@@ -1,0 +1,3112 @@
+{
+    "version-major": 267,
+    "version-minor": 0,
+    "mt-model-info": {
+        "version": "MT-pivot-Dawn-v267-20231128-f1e2fb111",
+        "language-pairs": [
+            "id_ID-pt_BR",
+            "pt_BR-id_ID"
+        ],
+        "tasks": [
+            "mt_app",
+            "mt_app_greedy",
+            "system",
+            "system_greedy"
+        ]
+    },
+    "text-proc": {},
+    "mt-decoders": {
+        "mt_app": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "id_ID-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-id/PB/id-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-id/PB/id-en.mt_app+siri.dict,PB-id/PB/id-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "id"
+                },
+                "id_ID-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-id_ID",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "id_ID",
+                    "source-token": "id_ID",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <id_ID-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-en/PB/en_US-pt_BR.mt_app.dict,PB-en/PB/en-pt.mt_app.dict,PB-en/PB/en-pt.mt_app+siri.dict,PB-en/PB/en-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-pt_BR-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "en"
+                },
+                "en_US-pt_BR-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-en_US",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "stop-mode": "finished_score",
+                    "stop-mode-finished-score-beam": 3,
+                    "target-locale": "pt_BR",
+                    "target-token": "pt_BR> <en_US-pt_BR-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-pt",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "id_ID-pt_BR-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "id_ID-pt_BR-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "id_ID",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                },
+                "pt_BR-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-pt/PB/pt-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-pt/PB/pt-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict,PB-pt/PB/pt-en.mt_app.dict,PB-pt/PB/pt-en.mt_app+siri.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "pt"
+                },
+                "pt_BR-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-pt_BR",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "pt_BR",
+                    "source-token": "pt_BR",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <pt_BR-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-en/PB/en-id.mt_app+siri.dict,PB-en/PB/en-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-id_ID-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "en"
+                },
+                "en_US-id_ID-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-en_US",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "id_ID",
+                    "target-token": "id_ID> <en_US-id_ID-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-id",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "pt_BR-id_ID-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "pt_BR-id_ID-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "pt_BR",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                }
+            },
+            "language-pair-specific-settings": {
+                "id_ID-pt_BR": {
+                    "graph": {
+                        "pivot_pb": {
+                            "receive-from": "graph-input",
+                            "block": "id_ID-pt_BR-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb": {
+                            "receive-from": "pivot_pb",
+                            "block": "id_ID-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "casemap": {
+                            "receive-from": "pb",
+                            "block": "id_ID-en_US-CaseMapBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "casemap",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "id_ID-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "id_ID-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb2": {
+                            "receive-from": "merger",
+                            "block": "en_US-pt_BR-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "casemap2": {
+                            "receive-from": "pb2",
+                            "block": "en_US-pt_BR-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode2": {
+                            "receive-from": "casemap2",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec2": {
+                            "receive-from": "spm_encode2",
+                            "block": "en_US-pt_BR-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode2": {
+                            "receive-from": "pdec2",
+                            "block": "en_US-pt_BR-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "pb2",
+                                "source_spm": "spm_encode2:tokens",
+                                "in": "spm_decode2",
+                                "target_spm": "spm_decode2:tokens"
+                            },
+                            "block": "id_ID-pt_BR-StructuredPredictionBlock"
+                        },
+                        "merger2": {
+                            "receive-from": {
+                                "in1": "pb2:final",
+                                "in2": "gender_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot": {
+                            "receive-from": {
+                                "in1": "pivot_pb:final",
+                                "in2": "merger2"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger_pivot",
+                            "block": "id_ID-pt_BR-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "en_US-pt_BR-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                },
+                "pt_BR-id_ID": {
+                    "graph": {
+                        "pivot_pb": {
+                            "receive-from": "graph-input",
+                            "block": "pt_BR-id_ID-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb": {
+                            "receive-from": "pivot_pb",
+                            "block": "pt_BR-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "casemap": {
+                            "receive-from": "pb",
+                            "block": "pt_BR-en_US-CaseMapBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "casemap",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "pt_BR-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "pt_BR-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb2": {
+                            "receive-from": "merger",
+                            "block": "en_US-id_ID-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "casemap2": {
+                            "receive-from": "pb2",
+                            "block": "en_US-id_ID-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode2": {
+                            "receive-from": "casemap2",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec2": {
+                            "receive-from": "spm_encode2",
+                            "block": "en_US-id_ID-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode2": {
+                            "receive-from": "pdec2",
+                            "block": "en_US-id_ID-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "pb2",
+                                "source_spm": "spm_encode2:tokens",
+                                "in": "spm_decode2",
+                                "target_spm": "spm_decode2:tokens"
+                            },
+                            "block": "pt_BR-id_ID-StructuredPredictionBlock"
+                        },
+                        "merger2": {
+                            "receive-from": {
+                                "in1": "pb2:final",
+                                "in2": "gender_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot": {
+                            "receive-from": {
+                                "in1": "pivot_pb:final",
+                                "in2": "merger2"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger_pivot",
+                            "block": "pt_BR-id_ID-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "en_US-id_ID-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                }
+            }
+        },
+        "mt_app_greedy": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "id_ID-pt_BR-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "id_ID-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-id/PB/id-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-id/PB/id-en.mt_app+siri.dict,PB-id/PB/id-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "id_ID",
+                    "source-token": "id_ID",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <id_ID-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-en/PB/en_US-pt_BR.mt_app.dict,PB-en/PB/en-pt.mt_app.dict,PB-en/PB/en-pt.mt_app+siri.dict,PB-en/PB/en-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-pt_BR-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "pt_BR",
+                    "target-token": "pt_BR> <en_US-pt_BR-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-pt",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "id_ID-pt_BR-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "en_US-pt_BR-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "id_ID-en_US-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "id_ID",
+                    "target-locale": "en_US",
+                    "source-token": "id_ID",
+                    "target-token": "en_US> <id_ID-en_US-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "en_US"
+                },
+                "id_ID-en_US-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "en_US-pt_BR-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "en_US",
+                    "target-locale": "pt_BR",
+                    "source-token": "en_US",
+                    "target-token": "pt_BR> <en_US-pt_BR-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-pt",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "pt_BR"
+                },
+                "pt_BR-id_ID-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "pt_BR-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-pt/PB/pt-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-pt/PB/pt-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict,PB-pt/PB/pt-en.mt_app.dict,PB-pt/PB/pt-en.mt_app+siri.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "pt_BR",
+                    "source-token": "pt_BR",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <pt_BR-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-en/PB/en-id.mt_app+siri.dict,PB-en/PB/en-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-id_ID-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "id_ID",
+                    "target-token": "id_ID> <en_US-id_ID-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-id",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "pt_BR-id_ID-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "en_US-id_ID-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "simple"
+                },
+                "pt_BR-en_US-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "pt_BR",
+                    "target-locale": "en_US",
+                    "source-token": "pt_BR",
+                    "target-token": "en_US> <pt_BR-en_US-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "en_US"
+                },
+                "pt_BR-en_US-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "en_US-id_ID-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "en_US",
+                    "target-locale": "id_ID",
+                    "source-token": "en_US",
+                    "target-token": "id_ID> <en_US-id_ID-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-id",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-AlignmentTokenizerBlock": {
+                    "block-type": "SimpleTokenizerBlock",
+                    "tokenizer-file": "MT-bi-en-id-th-vi-20/MT/tokenizer.pat",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                }
+            },
+            "language-pair-specific-settings": {
+                "id_ID-pt_BR": {
+                    "graph": {
+                        "select_source": {
+                            "receive-from": {
+                                "control": "graph-input",
+                                "value": "graph-input"
+                            },
+                            "block": "id_ID-pt_BR-SelectBlock"
+                        },
+                        "pivot_pb_trivial_alignment": {
+                            "receive-from": "select_source:match",
+                            "block": "id_ID-pt_BR-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb_trivial_alignment": {
+                            "receive-from": "pivot_pb_trivial_alignment",
+                            "block": "id_ID-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_trivial_alignment": {
+                            "receive-from": "pb_trivial_alignment",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec_trivial_alignment": {
+                            "receive-from": "spm_encode_trivial_alignment",
+                            "block": "id_ID-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode_trivial_alignment": {
+                            "receive-from": "pdec_trivial_alignment",
+                            "block": "id_ID-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_trivial_alignment:final",
+                                "in2": "spm_decode_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb_second_leg_trivial_alignment": {
+                            "receive-from": "merger_trivial_alignment",
+                            "block": "en_US-pt_BR-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg_trivial_alignment": {
+                            "receive-from": "pb_second_leg_trivial_alignment",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg_trivial_alignment": {
+                            "receive-from": "spm_encode_second_leg_trivial_alignment",
+                            "block": "en_US-pt_BR-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode_second_leg_trivial_alignment": {
+                            "receive-from": "pdec_second_leg_trivial_alignment",
+                            "block": "en_US-pt_BR-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "source": "pb_second_leg_trivial_alignment",
+                                "source_spm": "spm_encode_second_leg_trivial_alignment",
+                                "in": "spm_decode_second_leg_trivial_alignment",
+                                "target_spm": "spm_decode_second_leg_trivial_alignment:tokens"
+                            },
+                            "block": "id_ID-pt_BR-StructuredPredictionBlock"
+                        },
+                        "merger_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_second_leg_trivial_alignment:final",
+                                "in2": "gender_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pivot_pb_trivial_alignment:final",
+                                "in2": "merger_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "alignment_trivial_alignment": {
+                            "receive-from": {
+                                "source": "select_source:match",
+                                "segmentor-encode": "select_source:match",
+                                "pdec-decode": "merger_pivot_trivial_alignment",
+                                "segmentor-decode": "merger_pivot_trivial_alignment",
+                                "tokenized": "merger_pivot_trivial_alignment"
+                            },
+                            "block": "en_US-pt_BR-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "pivot_pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "id_ID-pt_BR-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "merge_check_direct_pb_hit": {
+                            "receive-from": {
+                                "in1": "pivot_pb",
+                                "in2": "pivot_pb:final"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "id_ID-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "id_ID-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation",
+                                "in2": "pdec"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit": {
+                            "receive-from": {
+                                "value": "select_source:pass",
+                                "control": "merge_encoded_translations"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null": {
+                            "receive-from": "select_pb_hit:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_pb_hit:match",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "target": "spm_encode_pb_translation",
+                                "source": "spm_encode_src"
+                            },
+                            "block": "id_ID-en_US-PDecForceAlignBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "id_ID-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "id_ID-en_US-AlignmentTokenizerBlock",
+                            "lp": "first_leg"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "segmentor-encode": "merge_encoded_source",
+                                "segmentor-decode": "spm_decode",
+                                "pdec-decode": "spm_decode:tokens",
+                                "tokenized": "tokenizer"
+                            },
+                            "block": "id_ID-en_US-AlignmentProcessorBlock",
+                            "lp": "first_leg"
+                        },
+                        "select_direct_pb_hit": {
+                            "receive-from": {
+                                "control": "merge_check_direct_pb_hit",
+                                "value": "alignment"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "spm_encode_direct_pb": {
+                            "receive-from": "pivot_pb:final",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pb_second_leg": {
+                            "receive-from": "select_direct_pb_hit:pass",
+                            "block": "en_US-pt_BR-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg": {
+                            "receive-from": "pb_second_leg",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_pb_translation_second_leg": {
+                            "receive-from": "pb_second_leg:final",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg": {
+                            "receive-from": "spm_encode_second_leg",
+                            "block": "en_US-pt_BR-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_encoded_translations_second_leg": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation_second_leg",
+                                "in2": "pdec_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit_second_leg": {
+                            "receive-from": {
+                                "value": "select_direct_pb_hit:pass",
+                                "control": "merge_encoded_translations_second_leg"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_second_leg": {
+                            "receive-from": "select_pb_hit_second_leg:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "merge_direct_pb_hit_source": {
+                            "receive-from": {
+                                "in2": "select_direct_pb_hit:match",
+                                "in1": "select_pb_hit_second_leg:match"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_encode_src_second_leg": {
+                            "receive-from": "merge_direct_pb_hit_source",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "merge_direct_pb_hit_target": {
+                            "receive-from": {
+                                "in2": "spm_encode_direct_pb",
+                                "in1": "spm_encode_pb_translation_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "force_align_second_leg": {
+                            "receive-from": {
+                                "source": "spm_encode_src_second_leg",
+                                "target": "merge_direct_pb_hit_target"
+                            },
+                            "block": "en_US-pt_BR-PDecForceAlignBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info_second_leg": {
+                            "receive-from": {
+                                "in2": "pdec_second_leg",
+                                "in1": "force_align_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source_second_leg": {
+                            "receive-from": {
+                                "in2": "spm_encode_second_leg",
+                                "in1": "spm_encode_src_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode_second_leg": {
+                            "receive-from": "merge_translations_with_needed_alignment_info_second_leg",
+                            "block": "en_US-pt_BR-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "source_spm": "merge_encoded_source_second_leg",
+                                "in": "spm_decode_second_leg",
+                                "target_spm": "spm_decode_second_leg:tokens"
+                            },
+                            "block": "id_ID-pt_BR-StructuredPredictionBlock"
+                        },
+                        "tokenizer_second_leg": {
+                            "receive-from": "gender_second_leg",
+                            "block": "en_US-pt_BR-AlignmentTokenizerBlock",
+                            "lp": "second_leg"
+                        },
+                        "alignment_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "segmentor-encode": "merge_encoded_source_second_leg",
+                                "pdec-decode": "gender_second_leg:spm",
+                                "segmentor-decode": "gender_second_leg",
+                                "tokenized": "tokenizer_second_leg"
+                            },
+                            "block": "en_US-pt_BR-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_final_result": {
+                            "receive-from": {
+                                "in1": "alignment_trivial_alignment",
+                                "in2": "alignment_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "graph-output": {
+                            "receive-from": "merge_final_result"
+                        }
+                    }
+                },
+                "pt_BR-id_ID": {
+                    "graph": {
+                        "select_source": {
+                            "receive-from": {
+                                "control": "graph-input",
+                                "value": "graph-input"
+                            },
+                            "block": "pt_BR-id_ID-SelectBlock"
+                        },
+                        "pivot_pb_trivial_alignment": {
+                            "receive-from": "select_source:match",
+                            "block": "pt_BR-id_ID-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb_trivial_alignment": {
+                            "receive-from": "pivot_pb_trivial_alignment",
+                            "block": "pt_BR-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_trivial_alignment": {
+                            "receive-from": "pb_trivial_alignment",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec_trivial_alignment": {
+                            "receive-from": "spm_encode_trivial_alignment",
+                            "block": "pt_BR-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode_trivial_alignment": {
+                            "receive-from": "pdec_trivial_alignment",
+                            "block": "pt_BR-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_trivial_alignment:final",
+                                "in2": "spm_decode_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb_second_leg_trivial_alignment": {
+                            "receive-from": "merger_trivial_alignment",
+                            "block": "en_US-id_ID-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg_trivial_alignment": {
+                            "receive-from": "pb_second_leg_trivial_alignment",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg_trivial_alignment": {
+                            "receive-from": "spm_encode_second_leg_trivial_alignment",
+                            "block": "en_US-id_ID-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode_second_leg_trivial_alignment": {
+                            "receive-from": "pdec_second_leg_trivial_alignment",
+                            "block": "en_US-id_ID-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "source": "pb_second_leg_trivial_alignment",
+                                "source_spm": "spm_encode_second_leg_trivial_alignment",
+                                "in": "spm_decode_second_leg_trivial_alignment",
+                                "target_spm": "spm_decode_second_leg_trivial_alignment:tokens"
+                            },
+                            "block": "pt_BR-id_ID-StructuredPredictionBlock"
+                        },
+                        "merger_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_second_leg_trivial_alignment:final",
+                                "in2": "gender_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pivot_pb_trivial_alignment:final",
+                                "in2": "merger_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "alignment_trivial_alignment": {
+                            "receive-from": {
+                                "source": "select_source:match",
+                                "segmentor-encode": "select_source:match",
+                                "pdec-decode": "merger_pivot_trivial_alignment",
+                                "segmentor-decode": "merger_pivot_trivial_alignment",
+                                "tokenized": "merger_pivot_trivial_alignment"
+                            },
+                            "block": "en_US-id_ID-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "pivot_pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "pt_BR-id_ID-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "merge_check_direct_pb_hit": {
+                            "receive-from": {
+                                "in1": "pivot_pb",
+                                "in2": "pivot_pb:final"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "pt_BR-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "pt_BR-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation",
+                                "in2": "pdec"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit": {
+                            "receive-from": {
+                                "value": "select_source:pass",
+                                "control": "merge_encoded_translations"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null": {
+                            "receive-from": "select_pb_hit:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_pb_hit:match",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "target": "spm_encode_pb_translation",
+                                "source": "spm_encode_src"
+                            },
+                            "block": "pt_BR-en_US-PDecForceAlignBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "pt_BR-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "pt_BR-en_US-AlignmentTokenizerBlock",
+                            "lp": "first_leg"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "segmentor-encode": "merge_encoded_source",
+                                "segmentor-decode": "spm_decode",
+                                "pdec-decode": "spm_decode:tokens",
+                                "tokenized": "tokenizer"
+                            },
+                            "block": "pt_BR-en_US-AlignmentProcessorBlock",
+                            "lp": "first_leg"
+                        },
+                        "select_direct_pb_hit": {
+                            "receive-from": {
+                                "control": "merge_check_direct_pb_hit",
+                                "value": "alignment"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "spm_encode_direct_pb": {
+                            "receive-from": "pivot_pb:final",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pb_second_leg": {
+                            "receive-from": "select_direct_pb_hit:pass",
+                            "block": "en_US-id_ID-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg": {
+                            "receive-from": "pb_second_leg",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_pb_translation_second_leg": {
+                            "receive-from": "pb_second_leg:final",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg": {
+                            "receive-from": "spm_encode_second_leg",
+                            "block": "en_US-id_ID-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_encoded_translations_second_leg": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation_second_leg",
+                                "in2": "pdec_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit_second_leg": {
+                            "receive-from": {
+                                "value": "select_direct_pb_hit:pass",
+                                "control": "merge_encoded_translations_second_leg"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_second_leg": {
+                            "receive-from": "select_pb_hit_second_leg:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "merge_direct_pb_hit_source": {
+                            "receive-from": {
+                                "in2": "select_direct_pb_hit:match",
+                                "in1": "select_pb_hit_second_leg:match"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_encode_src_second_leg": {
+                            "receive-from": "merge_direct_pb_hit_source",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "merge_direct_pb_hit_target": {
+                            "receive-from": {
+                                "in2": "spm_encode_direct_pb",
+                                "in1": "spm_encode_pb_translation_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "force_align_second_leg": {
+                            "receive-from": {
+                                "source": "spm_encode_src_second_leg",
+                                "target": "merge_direct_pb_hit_target"
+                            },
+                            "block": "en_US-id_ID-PDecForceAlignBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info_second_leg": {
+                            "receive-from": {
+                                "in2": "pdec_second_leg",
+                                "in1": "force_align_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source_second_leg": {
+                            "receive-from": {
+                                "in2": "spm_encode_second_leg",
+                                "in1": "spm_encode_src_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode_second_leg": {
+                            "receive-from": "merge_translations_with_needed_alignment_info_second_leg",
+                            "block": "en_US-id_ID-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "source_spm": "merge_encoded_source_second_leg",
+                                "in": "spm_decode_second_leg",
+                                "target_spm": "spm_decode_second_leg:tokens"
+                            },
+                            "block": "pt_BR-id_ID-StructuredPredictionBlock"
+                        },
+                        "tokenizer_second_leg": {
+                            "receive-from": "gender_second_leg",
+                            "block": "en_US-id_ID-AlignmentTokenizerBlock",
+                            "lp": "second_leg"
+                        },
+                        "alignment_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "segmentor-encode": "merge_encoded_source_second_leg",
+                                "pdec-decode": "gender_second_leg:spm",
+                                "segmentor-decode": "gender_second_leg",
+                                "tokenized": "tokenizer_second_leg"
+                            },
+                            "block": "en_US-id_ID-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_final_result": {
+                            "receive-from": {
+                                "in1": "alignment_trivial_alignment",
+                                "in2": "alignment_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "graph-output": {
+                            "receive-from": "merge_final_result"
+                        }
+                    }
+                }
+            }
+        },
+        "system": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "id_ID-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-id/PB/id-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-id/PB/id-en.mt_app+siri.dict,PB-id/PB/id-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "id"
+                },
+                "id_ID-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-id_ID",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "id_ID",
+                    "source-token": "id_ID",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <id_ID-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-en/PB/en_US-pt_BR.mt_app.dict,PB-en/PB/en-pt.mt_app.dict,PB-en/PB/en-pt.mt_app+siri.dict,PB-en/PB/en-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-pt_BR-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "en"
+                },
+                "en_US-pt_BR-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-en_US",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "pt_BR",
+                    "target-token": "pt_BR> <en_US-pt_BR-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-pt",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "id_ID-pt_BR-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "id_ID-pt_BR-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "id_ID",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                },
+                "pt_BR-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-pt/PB/pt-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-pt/PB/pt-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict,PB-pt/PB/pt-en.mt_app.dict,PB-pt/PB/pt-en.mt_app+siri.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "pt"
+                },
+                "pt_BR-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-pt_BR",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "pt_BR",
+                    "source-token": "pt_BR",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <pt_BR-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "PB-en/PB/en-id.mt_app+siri.dict,PB-en/PB/en-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-id_ID-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "en"
+                },
+                "en_US-id_ID-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-en_US",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "id_ID",
+                    "target-token": "id_ID> <en_US-id_ID-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-id",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "pt_BR-id_ID-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "pt_BR-id_ID-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "pt_BR",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                }
+            },
+            "language-pair-specific-settings": {
+                "id_ID-pt_BR": {
+                    "graph": {
+                        "pivot_pb": {
+                            "receive-from": "graph-input",
+                            "block": "id_ID-pt_BR-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb": {
+                            "receive-from": "pivot_pb",
+                            "block": "id_ID-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "casemap": {
+                            "receive-from": "pb",
+                            "block": "id_ID-en_US-CaseMapBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "casemap",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "id_ID-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "id_ID-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb2": {
+                            "receive-from": "merger",
+                            "block": "en_US-pt_BR-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "casemap2": {
+                            "receive-from": "pb2",
+                            "block": "en_US-pt_BR-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode2": {
+                            "receive-from": "casemap2",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec2": {
+                            "receive-from": "spm_encode2",
+                            "block": "en_US-pt_BR-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode2": {
+                            "receive-from": "pdec2",
+                            "block": "en_US-pt_BR-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "pb2",
+                                "source_spm": "spm_encode2:tokens",
+                                "in": "spm_decode2",
+                                "target_spm": "spm_decode2:tokens"
+                            },
+                            "block": "id_ID-pt_BR-StructuredPredictionBlock"
+                        },
+                        "merger2": {
+                            "receive-from": {
+                                "in1": "pb2:final",
+                                "in2": "gender_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot": {
+                            "receive-from": {
+                                "in1": "pivot_pb:final",
+                                "in2": "merger2"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger_pivot",
+                            "block": "id_ID-pt_BR-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "en_US-pt_BR-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                },
+                "pt_BR-id_ID": {
+                    "graph": {
+                        "pivot_pb": {
+                            "receive-from": "graph-input",
+                            "block": "pt_BR-id_ID-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb": {
+                            "receive-from": "pivot_pb",
+                            "block": "pt_BR-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "casemap": {
+                            "receive-from": "pb",
+                            "block": "pt_BR-en_US-CaseMapBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "casemap",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "pt_BR-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "pt_BR-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb2": {
+                            "receive-from": "merger",
+                            "block": "en_US-id_ID-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "casemap2": {
+                            "receive-from": "pb2",
+                            "block": "en_US-id_ID-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode2": {
+                            "receive-from": "casemap2",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec2": {
+                            "receive-from": "spm_encode2",
+                            "block": "en_US-id_ID-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode2": {
+                            "receive-from": "pdec2",
+                            "block": "en_US-id_ID-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "pb2",
+                                "source_spm": "spm_encode2:tokens",
+                                "in": "spm_decode2",
+                                "target_spm": "spm_decode2:tokens"
+                            },
+                            "block": "pt_BR-id_ID-StructuredPredictionBlock"
+                        },
+                        "merger2": {
+                            "receive-from": {
+                                "in1": "pb2:final",
+                                "in2": "gender_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot": {
+                            "receive-from": {
+                                "in1": "pivot_pb:final",
+                                "in2": "merger2"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger_pivot",
+                            "block": "pt_BR-id_ID-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "en_US-id_ID-CaseMapBlock",
+                            "lp": "second_leg"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                }
+            }
+        },
+        "system_greedy": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "id_ID-pt_BR-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "id_ID-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-id/PB/id-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-id/PB/id-en.mt_app+siri.dict,PB-id/PB/id-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-id"
+                },
+                "id_ID-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "id_ID",
+                    "source-token": "id_ID",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <id_ID-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-pt_BR-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-en/PB/en_US-pt_BR.mt_app.dict,PB-en/PB/en-pt.mt_app.dict,PB-en/PB/en-pt.mt_app+siri.dict,PB-en/PB/en-pt.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-pt_BR-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "pt_BR",
+                    "target-token": "pt_BR> <en_US-pt_BR-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-pt",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "id_ID-pt_BR-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "en_US-pt_BR-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "id_ID-en_US-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "id_ID",
+                    "target-locale": "en_US",
+                    "source-token": "id_ID",
+                    "target-token": "en_US> <id_ID-en_US-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "id_ID-en_US-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "en_US"
+                },
+                "id_ID-en_US-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "en_US-pt_BR-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "en_US",
+                    "target-locale": "pt_BR",
+                    "source-token": "en_US",
+                    "target-token": "pt_BR> <en_US-pt_BR-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-pt",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-pt_BR-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "pt_BR"
+                },
+                "pt_BR-id_ID-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "pt_BR-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "phrase-book-mode": "phrase_book_only",
+                    "pb-file-list": "PB-pt/PB/pt-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-pt/PB/pt-en.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict,PB-pt/PB/pt-en.mt_app.dict,PB-pt/PB/pt-en.mt_app+siri.dict",
+                    "asset-name": "PB-pt"
+                },
+                "pt_BR-en_US-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "pt_BR",
+                    "source-token": "pt_BR",
+                    "target-locale": "en_US",
+                    "target-token": "en_US> <pt_BR-en_US-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "en_US-id_ID-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "PB-en/PB/en-id.mt_app+siri.dict,PB-en/PB/en-id.mt_app+mt_app_greedy+siri+system+system_greedy+web.dict",
+                    "asset-name": "PB-en"
+                },
+                "en_US-id_ID-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "en_US",
+                    "source-token": "en_US",
+                    "target-locale": "id_ID",
+                    "target-token": "id_ID> <en_US-id_ID-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-id",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-id-th-vi-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "pt_BR-id_ID-StructuredPredictionBlock": {
+                    "block-type": "StructuredPredictionBlock",
+                    "disable-structured-prediction": true
+                },
+                "en_US-id_ID-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "simple"
+                },
+                "pt_BR-en_US-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-es-de-it-fr-pt-nl-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "pt_BR",
+                    "target-locale": "en_US",
+                    "source-token": "pt_BR",
+                    "target-token": "en_US> <pt_BR-en_US-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-en",
+                    "asset-name": "MT-bi-en-es-de-it-fr-pt-nl-20"
+                },
+                "pt_BR-en_US-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "en_US"
+                },
+                "pt_BR-en_US-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "en_US-id_ID-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-id-th-vi-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "en_US",
+                    "target-locale": "id_ID",
+                    "source-token": "en_US",
+                    "target-token": "id_ID> <en_US-id_ID-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-id",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                },
+                "en_US-id_ID-AlignmentTokenizerBlock": {
+                    "block-type": "SimpleTokenizerBlock",
+                    "tokenizer-file": "MT-bi-en-id-th-vi-20/MT/tokenizer.pat",
+                    "asset-name": "MT-bi-en-id-th-vi-20"
+                }
+            },
+            "language-pair-specific-settings": {
+                "id_ID-pt_BR": {
+                    "graph": {
+                        "select_source": {
+                            "receive-from": {
+                                "control": "graph-input",
+                                "value": "graph-input"
+                            },
+                            "block": "id_ID-pt_BR-SelectBlock"
+                        },
+                        "pivot_pb_trivial_alignment": {
+                            "receive-from": "select_source:match",
+                            "block": "id_ID-pt_BR-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb_trivial_alignment": {
+                            "receive-from": "pivot_pb_trivial_alignment",
+                            "block": "id_ID-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_trivial_alignment": {
+                            "receive-from": "pb_trivial_alignment",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec_trivial_alignment": {
+                            "receive-from": "spm_encode_trivial_alignment",
+                            "block": "id_ID-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode_trivial_alignment": {
+                            "receive-from": "pdec_trivial_alignment",
+                            "block": "id_ID-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_trivial_alignment:final",
+                                "in2": "spm_decode_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb_second_leg_trivial_alignment": {
+                            "receive-from": "merger_trivial_alignment",
+                            "block": "en_US-pt_BR-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg_trivial_alignment": {
+                            "receive-from": "pb_second_leg_trivial_alignment",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg_trivial_alignment": {
+                            "receive-from": "spm_encode_second_leg_trivial_alignment",
+                            "block": "en_US-pt_BR-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode_second_leg_trivial_alignment": {
+                            "receive-from": "pdec_second_leg_trivial_alignment",
+                            "block": "en_US-pt_BR-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "source": "pb_second_leg_trivial_alignment",
+                                "source_spm": "spm_encode_second_leg_trivial_alignment",
+                                "in": "spm_decode_second_leg_trivial_alignment",
+                                "target_spm": "spm_decode_second_leg_trivial_alignment:tokens"
+                            },
+                            "block": "id_ID-pt_BR-StructuredPredictionBlock"
+                        },
+                        "merger_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_second_leg_trivial_alignment:final",
+                                "in2": "gender_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pivot_pb_trivial_alignment:final",
+                                "in2": "merger_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "alignment_trivial_alignment": {
+                            "receive-from": {
+                                "source": "select_source:match",
+                                "segmentor-encode": "select_source:match",
+                                "pdec-decode": "merger_pivot_trivial_alignment",
+                                "segmentor-decode": "merger_pivot_trivial_alignment",
+                                "tokenized": "merger_pivot_trivial_alignment"
+                            },
+                            "block": "en_US-pt_BR-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "pivot_pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "id_ID-pt_BR-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "merge_check_direct_pb_hit": {
+                            "receive-from": {
+                                "in1": "pivot_pb",
+                                "in2": "pivot_pb:final"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "id_ID-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "id_ID-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation",
+                                "in2": "pdec"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit": {
+                            "receive-from": {
+                                "value": "select_source:pass",
+                                "control": "merge_encoded_translations"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null": {
+                            "receive-from": "select_pb_hit:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_pb_hit:match",
+                            "block": "id_ID-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "target": "spm_encode_pb_translation",
+                                "source": "spm_encode_src"
+                            },
+                            "block": "id_ID-en_US-PDecForceAlignBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "id_ID-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "id_ID-en_US-AlignmentTokenizerBlock",
+                            "lp": "first_leg"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "segmentor-encode": "merge_encoded_source",
+                                "segmentor-decode": "spm_decode",
+                                "pdec-decode": "spm_decode:tokens",
+                                "tokenized": "tokenizer"
+                            },
+                            "block": "id_ID-en_US-AlignmentProcessorBlock",
+                            "lp": "first_leg"
+                        },
+                        "select_direct_pb_hit": {
+                            "receive-from": {
+                                "control": "merge_check_direct_pb_hit",
+                                "value": "alignment"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "spm_encode_direct_pb": {
+                            "receive-from": "pivot_pb:final",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pb_second_leg": {
+                            "receive-from": "select_direct_pb_hit:pass",
+                            "block": "en_US-pt_BR-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg": {
+                            "receive-from": "pb_second_leg",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_pb_translation_second_leg": {
+                            "receive-from": "pb_second_leg:final",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg": {
+                            "receive-from": "spm_encode_second_leg",
+                            "block": "en_US-pt_BR-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_encoded_translations_second_leg": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation_second_leg",
+                                "in2": "pdec_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit_second_leg": {
+                            "receive-from": {
+                                "value": "select_direct_pb_hit:pass",
+                                "control": "merge_encoded_translations_second_leg"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_second_leg": {
+                            "receive-from": "select_pb_hit_second_leg:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "merge_direct_pb_hit_source": {
+                            "receive-from": {
+                                "in2": "select_direct_pb_hit:match",
+                                "in1": "select_pb_hit_second_leg:match"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_encode_src_second_leg": {
+                            "receive-from": "merge_direct_pb_hit_source",
+                            "block": "en_US-pt_BR-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "merge_direct_pb_hit_target": {
+                            "receive-from": {
+                                "in2": "spm_encode_direct_pb",
+                                "in1": "spm_encode_pb_translation_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "force_align_second_leg": {
+                            "receive-from": {
+                                "source": "spm_encode_src_second_leg",
+                                "target": "merge_direct_pb_hit_target"
+                            },
+                            "block": "en_US-pt_BR-PDecForceAlignBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info_second_leg": {
+                            "receive-from": {
+                                "in2": "pdec_second_leg",
+                                "in1": "force_align_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source_second_leg": {
+                            "receive-from": {
+                                "in2": "spm_encode_second_leg",
+                                "in1": "spm_encode_src_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode_second_leg": {
+                            "receive-from": "merge_translations_with_needed_alignment_info_second_leg",
+                            "block": "en_US-pt_BR-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "source_spm": "merge_encoded_source_second_leg",
+                                "in": "spm_decode_second_leg",
+                                "target_spm": "spm_decode_second_leg:tokens"
+                            },
+                            "block": "id_ID-pt_BR-StructuredPredictionBlock"
+                        },
+                        "tokenizer_second_leg": {
+                            "receive-from": "gender_second_leg",
+                            "block": "en_US-pt_BR-AlignmentTokenizerBlock",
+                            "lp": "second_leg"
+                        },
+                        "alignment_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "segmentor-encode": "merge_encoded_source_second_leg",
+                                "pdec-decode": "gender_second_leg:spm",
+                                "segmentor-decode": "gender_second_leg",
+                                "tokenized": "tokenizer_second_leg"
+                            },
+                            "block": "en_US-pt_BR-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_final_result": {
+                            "receive-from": {
+                                "in1": "alignment_trivial_alignment",
+                                "in2": "alignment_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "graph-output": {
+                            "receive-from": "merge_final_result"
+                        }
+                    }
+                },
+                "pt_BR-id_ID": {
+                    "graph": {
+                        "select_source": {
+                            "receive-from": {
+                                "control": "graph-input",
+                                "value": "graph-input"
+                            },
+                            "block": "pt_BR-id_ID-SelectBlock"
+                        },
+                        "pivot_pb_trivial_alignment": {
+                            "receive-from": "select_source:match",
+                            "block": "pt_BR-id_ID-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "pb_trivial_alignment": {
+                            "receive-from": "pivot_pb_trivial_alignment",
+                            "block": "pt_BR-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_trivial_alignment": {
+                            "receive-from": "pb_trivial_alignment",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec_trivial_alignment": {
+                            "receive-from": "spm_encode_trivial_alignment",
+                            "block": "pt_BR-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_decode_trivial_alignment": {
+                            "receive-from": "pdec_trivial_alignment",
+                            "block": "pt_BR-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "merger_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_trivial_alignment:final",
+                                "in2": "spm_decode_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb_second_leg_trivial_alignment": {
+                            "receive-from": "merger_trivial_alignment",
+                            "block": "en_US-id_ID-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg_trivial_alignment": {
+                            "receive-from": "pb_second_leg_trivial_alignment",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg_trivial_alignment": {
+                            "receive-from": "spm_encode_second_leg_trivial_alignment",
+                            "block": "en_US-id_ID-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_decode_second_leg_trivial_alignment": {
+                            "receive-from": "pdec_second_leg_trivial_alignment",
+                            "block": "en_US-id_ID-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "source": "pb_second_leg_trivial_alignment",
+                                "source_spm": "spm_encode_second_leg_trivial_alignment",
+                                "in": "spm_decode_second_leg_trivial_alignment",
+                                "target_spm": "spm_decode_second_leg_trivial_alignment:tokens"
+                            },
+                            "block": "pt_BR-id_ID-StructuredPredictionBlock"
+                        },
+                        "merger_second_leg_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pb_second_leg_trivial_alignment:final",
+                                "in2": "gender_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "lp": "second_leg",
+                            "merge-style": "any"
+                        },
+                        "merger_pivot_trivial_alignment": {
+                            "receive-from": {
+                                "in1": "pivot_pb_trivial_alignment:final",
+                                "in2": "merger_second_leg_trivial_alignment"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "alignment_trivial_alignment": {
+                            "receive-from": {
+                                "source": "select_source:match",
+                                "segmentor-encode": "select_source:match",
+                                "pdec-decode": "merger_pivot_trivial_alignment",
+                                "segmentor-decode": "merger_pivot_trivial_alignment",
+                                "tokenized": "merger_pivot_trivial_alignment"
+                            },
+                            "block": "en_US-id_ID-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "pivot_pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "pt_BR-id_ID-PhraseBookBlock",
+                            "lp": "main"
+                        },
+                        "merge_check_direct_pb_hit": {
+                            "receive-from": {
+                                "in1": "pivot_pb",
+                                "in2": "pivot_pb:final"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "pb": {
+                            "receive-from": "select_source:pass",
+                            "block": "pt_BR-en_US-PhraseBookBlock",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "pt_BR-en_US-PDecTranslatorBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation",
+                                "in2": "pdec"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit": {
+                            "receive-from": {
+                                "value": "select_source:pass",
+                                "control": "merge_encoded_translations"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null": {
+                            "receive-from": "select_pb_hit:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_pb_hit:match",
+                            "block": "pt_BR-en_US-SentencePieceBlockEncode",
+                            "lp": "first_leg"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "target": "spm_encode_pb_translation",
+                                "source": "spm_encode_src"
+                            },
+                            "block": "pt_BR-en_US-PDecForceAlignBlock",
+                            "lp": "first_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "pt_BR-en_US-SentencePieceBlockDecode",
+                            "lp": "first_leg"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "pt_BR-en_US-AlignmentTokenizerBlock",
+                            "lp": "first_leg"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "segmentor-encode": "merge_encoded_source",
+                                "segmentor-decode": "spm_decode",
+                                "pdec-decode": "spm_decode:tokens",
+                                "tokenized": "tokenizer"
+                            },
+                            "block": "pt_BR-en_US-AlignmentProcessorBlock",
+                            "lp": "first_leg"
+                        },
+                        "select_direct_pb_hit": {
+                            "receive-from": {
+                                "control": "merge_check_direct_pb_hit",
+                                "value": "alignment"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "spm_encode_direct_pb": {
+                            "receive-from": "pivot_pb:final",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pb_second_leg": {
+                            "receive-from": "select_direct_pb_hit:pass",
+                            "block": "en_US-id_ID-PhraseBookBlock",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_second_leg": {
+                            "receive-from": "pb_second_leg",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "spm_encode_pb_translation_second_leg": {
+                            "receive-from": "pb_second_leg:final",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "pdec_second_leg": {
+                            "receive-from": "spm_encode_second_leg",
+                            "block": "en_US-id_ID-PDecTranslatorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_encoded_translations_second_leg": {
+                            "receive-from": {
+                                "in1": "spm_encode_pb_translation_second_leg",
+                                "in2": "pdec_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_pb_hit_second_leg": {
+                            "receive-from": {
+                                "value": "select_direct_pb_hit:pass",
+                                "control": "merge_encoded_translations_second_leg"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_second_leg": {
+                            "receive-from": "select_pb_hit_second_leg:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "merge_direct_pb_hit_source": {
+                            "receive-from": {
+                                "in2": "select_direct_pb_hit:match",
+                                "in1": "select_pb_hit_second_leg:match"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_encode_src_second_leg": {
+                            "receive-from": "merge_direct_pb_hit_source",
+                            "block": "en_US-id_ID-SentencePieceBlockEncode",
+                            "lp": "second_leg"
+                        },
+                        "merge_direct_pb_hit_target": {
+                            "receive-from": {
+                                "in2": "spm_encode_direct_pb",
+                                "in1": "spm_encode_pb_translation_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "force_align_second_leg": {
+                            "receive-from": {
+                                "source": "spm_encode_src_second_leg",
+                                "target": "merge_direct_pb_hit_target"
+                            },
+                            "block": "en_US-id_ID-PDecForceAlignBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_translations_with_needed_alignment_info_second_leg": {
+                            "receive-from": {
+                                "in2": "pdec_second_leg",
+                                "in1": "force_align_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "merge_encoded_source_second_leg": {
+                            "receive-from": {
+                                "in2": "spm_encode_second_leg",
+                                "in1": "spm_encode_src_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode_second_leg": {
+                            "receive-from": "merge_translations_with_needed_alignment_info_second_leg",
+                            "block": "en_US-id_ID-SentencePieceBlockDecode",
+                            "lp": "second_leg"
+                        },
+                        "gender_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "source_spm": "merge_encoded_source_second_leg",
+                                "in": "spm_decode_second_leg",
+                                "target_spm": "spm_decode_second_leg:tokens"
+                            },
+                            "block": "pt_BR-id_ID-StructuredPredictionBlock"
+                        },
+                        "tokenizer_second_leg": {
+                            "receive-from": "gender_second_leg",
+                            "block": "en_US-id_ID-AlignmentTokenizerBlock",
+                            "lp": "second_leg"
+                        },
+                        "alignment_second_leg": {
+                            "receive-from": {
+                                "source": "alignment",
+                                "segmentor-encode": "merge_encoded_source_second_leg",
+                                "pdec-decode": "gender_second_leg:spm",
+                                "segmentor-decode": "gender_second_leg",
+                                "tokenized": "tokenizer_second_leg"
+                            },
+                            "block": "en_US-id_ID-AlignmentProcessorBlock",
+                            "lp": "second_leg"
+                        },
+                        "merge_final_result": {
+                            "receive-from": {
+                                "in1": "alignment_trivial_alignment",
+                                "in2": "alignment_second_leg"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "graph-output": {
+                            "receive-from": "merge_final_result"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

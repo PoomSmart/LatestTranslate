@@ -1,7 +1,9 @@
 #!/bin/bash
 
-echo "Removing translation v4 assets..."
-rm -rf /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets4
+echo "Removing translation v6 assets..."
+rm -rf /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets6
+
+cp -r /var/jb/Library/Application\ Support/LatestTranslate/com_apple_MobileAsset_SpeechTranslationAssets6 /var/MobileAsset/AssetsV2/com_apple_MobileAsset_SpeechTranslationAssets6
 
 echo "Killing translationd and mobileassetd..."
 killall -9 translationd || true

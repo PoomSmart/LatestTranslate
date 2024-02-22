@@ -1,0 +1,1288 @@
+{
+    "version-major": 267,
+    "version-minor": 0,
+    "mt-model-info": {
+        "version": "MT-pivot-Dawn-v267-20231128-f1e2fb111",
+        "language-pairs": [
+            "ru_RU-uk_UA",
+            "uk_UA-ru_RU"
+        ],
+        "tasks": [
+            "mt_app",
+            "mt_app_greedy",
+            "system",
+            "system_greedy"
+        ]
+    },
+    "text-proc": {},
+    "mt-decoders": {
+        "mt_app": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "ru_RU-uk_UA-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "",
+                    "asset-name": "PB-ru"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-ru_RU",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "ru_RU",
+                    "source-token": "ru_RU",
+                    "target-locale": "uk_UA",
+                    "target-token": "uk_UA> <ru_RU-uk_UA-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-uk",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "ru_RU",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                },
+                "ru_RU-uk_UA-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "ru"
+                },
+                "uk_UA-ru_RU-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "",
+                    "asset-name": "PB-uk"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-uk_UA",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "uk_UA",
+                    "source-token": "uk_UA",
+                    "target-locale": "ru_RU",
+                    "target-token": "ru_RU> <uk_UA-ru_RU-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-ru",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "uk_UA",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                },
+                "uk_UA-ru_RU-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "uk"
+                }
+            },
+            "language-pair-specific-settings": {
+                "ru_RU-uk_UA": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "ru_RU-uk_UA-PhraseBookBlock",
+                            "filter-entries": "true"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "ru_RU-uk_UA-PDecTranslatorBlock"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockDecode"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger",
+                            "block": "ru_RU-uk_UA-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "ru_RU-uk_UA-CaseMapBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                },
+                "uk_UA-ru_RU": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "uk_UA-ru_RU-PhraseBookBlock",
+                            "filter-entries": "true"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "uk_UA-ru_RU-PDecTranslatorBlock"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockDecode"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger",
+                            "block": "uk_UA-ru_RU-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "uk_UA-ru_RU-CaseMapBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                }
+            }
+        },
+        "mt_app_greedy": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "ru_RU-uk_UA-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "",
+                    "asset-name": "PB-ru"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "ru_RU",
+                    "source-token": "ru_RU",
+                    "target-locale": "uk_UA",
+                    "target-token": "uk_UA> <ru_RU-uk_UA-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-uk",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "ru_RU-uk_UA-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "ru_RU",
+                    "target-locale": "uk_UA",
+                    "source-token": "ru_RU",
+                    "target-token": "uk_UA> <ru_RU-uk_UA-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-uk",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "uk_UA"
+                },
+                "ru_RU-uk_UA-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "uk_UA-ru_RU-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "",
+                    "asset-name": "PB-uk"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "uk_UA",
+                    "source-token": "uk_UA",
+                    "target-locale": "ru_RU",
+                    "target-token": "ru_RU> <uk_UA-ru_RU-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-ru",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "uk_UA-ru_RU-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "uk_UA",
+                    "target-locale": "ru_RU",
+                    "source-token": "uk_UA",
+                    "target-token": "ru_RU> <uk_UA-ru_RU-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-ru",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "ru_RU"
+                },
+                "uk_UA-ru_RU-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                }
+            },
+            "language-pair-specific-settings": {
+                "ru_RU-uk_UA": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "ru_RU-uk_UA-PhraseBookBlock"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "ru_RU-uk_UA-PDecTranslatorBlock"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "spm_encode_pb_translation"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_source_spc": {
+                            "receive-from": {
+                                "control": "merge_encoded_translations",
+                                "value": "graph-input"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_1": {
+                            "receive-from": "select_source_spc:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_source_spc:match",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "select_source": {
+                            "receive-from": {
+                                "control": "spm_encode_src",
+                                "value": "spm_encode_src"
+                            },
+                            "block": "ru_RU-uk_UA-SelectBlock"
+                        },
+                        "select_target": {
+                            "receive-from": {
+                                "value": "spm_encode_pb_translation",
+                                "control": "spm_encode_src"
+                            },
+                            "block": "ru_RU-uk_UA-SelectBlock"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "null_2": {
+                            "receive-from": "select_source:match",
+                            "block-type": "NullBlock"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "target": "select_target:pass"
+                            },
+                            "block": "ru_RU-uk_UA-PDecForceAlignBlock"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in3": "pdec",
+                                "in1": "select_target:match",
+                                "in2": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockDecode"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "ru_RU-uk_UA-AlignmentTokenizerBlock"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "segmentor-encode": "merge_encoded_source",
+                                "pdec-decode": "spm_decode:tokens",
+                                "segmentor-decode": "spm_decode",
+                                "tokenized": "tokenizer",
+                                "source": "graph-input"
+                            },
+                            "block": "ru_RU-uk_UA-AlignmentProcessorBlock"
+                        },
+                        "do_not_translate": {
+                            "receive-from": {
+                                "target": "alignment",
+                                "source": "graph-input"
+                            },
+                            "block-type": "DoNotTranslateBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "do_not_translate"
+                        }
+                    }
+                },
+                "uk_UA-ru_RU": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "uk_UA-ru_RU-PhraseBookBlock"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "uk_UA-ru_RU-PDecTranslatorBlock"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "spm_encode_pb_translation"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_source_spc": {
+                            "receive-from": {
+                                "control": "merge_encoded_translations",
+                                "value": "graph-input"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_1": {
+                            "receive-from": "select_source_spc:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_source_spc:match",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "select_source": {
+                            "receive-from": {
+                                "control": "spm_encode_src",
+                                "value": "spm_encode_src"
+                            },
+                            "block": "uk_UA-ru_RU-SelectBlock"
+                        },
+                        "select_target": {
+                            "receive-from": {
+                                "value": "spm_encode_pb_translation",
+                                "control": "spm_encode_src"
+                            },
+                            "block": "uk_UA-ru_RU-SelectBlock"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "null_2": {
+                            "receive-from": "select_source:match",
+                            "block-type": "NullBlock"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "target": "select_target:pass"
+                            },
+                            "block": "uk_UA-ru_RU-PDecForceAlignBlock"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in3": "pdec",
+                                "in1": "select_target:match",
+                                "in2": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockDecode"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "uk_UA-ru_RU-AlignmentTokenizerBlock"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "segmentor-encode": "merge_encoded_source",
+                                "pdec-decode": "spm_decode:tokens",
+                                "segmentor-decode": "spm_decode",
+                                "tokenized": "tokenizer",
+                                "source": "graph-input"
+                            },
+                            "block": "uk_UA-ru_RU-AlignmentProcessorBlock"
+                        },
+                        "do_not_translate": {
+                            "receive-from": {
+                                "target": "alignment",
+                                "source": "graph-input"
+                            },
+                            "block-type": "DoNotTranslateBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "do_not_translate"
+                        }
+                    }
+                }
+            }
+        },
+        "system": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "ru_RU-uk_UA-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "",
+                    "asset-name": "PB-ru"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-ru_RU",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "ru_RU",
+                    "source-token": "ru_RU",
+                    "target-locale": "uk_UA",
+                    "target-token": "uk_UA> <ru_RU-uk_UA-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-uk",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "ru_RU",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                },
+                "ru_RU-uk_UA-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "ru"
+                },
+                "uk_UA-ru_RU-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 4,
+                    "pb-file-list": "",
+                    "asset-name": "PB-uk"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 3,
+                    "lm-mode": "partial_bias",
+                    "lm-weight": 0.25,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "norm-costs": true,
+                    "partial-input-override": {
+                        "beam": 1,
+                        "lm-weight": 0.3,
+                        "source-token": "partial> <src-uk_UA",
+                        "veto-factor": 0.0
+                    },
+                    "reset-meta-info": false,
+                    "rs-beam": 0.66,
+                    "source-locale": "uk_UA",
+                    "source-token": "uk_UA",
+                    "target-locale": "ru_RU",
+                    "target-token": "ru_RU> <uk_UA-ru_RU-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-ru",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-FilterBlock": {
+                    "locale-validation": true,
+                    "source-locale": "uk_UA",
+                    "block-type": "FilterBlock",
+                    "nbest": 1,
+                    "enable": true
+                },
+                "uk_UA-ru_RU-CaseMapBlock": {
+                    "block-type": "CaseMapBlock",
+                    "locale": "uk"
+                }
+            },
+            "language-pair-specific-settings": {
+                "ru_RU-uk_UA": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "ru_RU-uk_UA-PhraseBookBlock",
+                            "filter-entries": "true"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "ru_RU-uk_UA-PDecTranslatorBlock"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockDecode"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger",
+                            "block": "ru_RU-uk_UA-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "ru_RU-uk_UA-CaseMapBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                },
+                "uk_UA-ru_RU": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "uk_UA-ru_RU-PhraseBookBlock",
+                            "filter-entries": "true"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "uk_UA-ru_RU-PDecTranslatorBlock"
+                        },
+                        "spm_decode": {
+                            "receive-from": "pdec",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockDecode"
+                        },
+                        "merger": {
+                            "receive-from": {
+                                "in1": "pb:final",
+                                "in2": "spm_decode"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "filter": {
+                            "receive-from": "merger",
+                            "block": "uk_UA-ru_RU-FilterBlock"
+                        },
+                        "casemap_final": {
+                            "receive-from": "filter",
+                            "block": "uk_UA-ru_RU-CaseMapBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "casemap_final"
+                        }
+                    }
+                }
+            }
+        },
+        "system_greedy": {
+            "engine-type": "PDEC",
+            "block-definitions": {
+                "ru_RU-uk_UA-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "",
+                    "asset-name": "PB-ru"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "ru_RU",
+                    "source-token": "ru_RU",
+                    "target-locale": "uk_UA",
+                    "target-token": "uk_UA> <ru_RU-uk_UA-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-uk",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "ru_RU-uk_UA-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "ru_RU",
+                    "target-locale": "uk_UA",
+                    "source-token": "ru_RU",
+                    "target-token": "uk_UA> <ru_RU-uk_UA-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-uk",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "ru_RU-uk_UA-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "uk_UA"
+                },
+                "ru_RU-uk_UA-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                },
+                "uk_UA-ru_RU-PhraseBookBlock": {
+                    "block-type": "PhraseBookBlock",
+                    "enable": true,
+                    "nbest": 1,
+                    "pb-file-list": "",
+                    "asset-name": "PB-uk"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockEncode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "encode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-PDecTranslatorBlock": {
+                    "block-type": "PDecTranslatorBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "engine-type": "PDEC",
+                    "enable-memory-map": true,
+                    "confidence-model-file": "",
+                    "confidence-threshold": 0,
+                    "use-sentencepiece-ids": true,
+                    "beam": 1,
+                    "lm-mode": "rescore_bpe",
+                    "lm-weight": 0.0,
+                    "max-seq-length": 200,
+                    "max-seq-length-floor": 80,
+                    "max-seq-length-relative": 2,
+                    "nbest": 1,
+                    "norm-costs": true,
+                    "reset-meta-info": false,
+                    "source-locale": "uk_UA",
+                    "source-token": "uk_UA",
+                    "target-locale": "ru_RU",
+                    "target-token": "ru_RU> <uk_UA-ru_RU-optimal",
+                    "unk-replace": true,
+                    "veto-factor": 0,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-ru",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-SelectBlock": {
+                    "block-type": "SelectBlock",
+                    "match-key": "alignment-queries",
+                    "match-wildcard": "**",
+                    "match-pattern": [
+                        {
+                            "start": "**",
+                            "end": "**"
+                        }
+                    ]
+                },
+                "uk_UA-ru_RU-PDecForceAlignBlock": {
+                    "block-type": "PDecForceAlignBlock",
+                    "model-file": "MT-bi-en-ru-pl-uk-20/MT/pyespresso.mdl.bin",
+                    "model-type": "espresso",
+                    "nbest": 1,
+                    "source-locale": "uk_UA",
+                    "target-locale": "ru_RU",
+                    "source-token": "uk_UA",
+                    "target-token": "ru_RU> <uk_UA-ru_RU-optimal",
+                    "use-sentencepiece-ids": true,
+                    "enable_shortlist": true,
+                    "merge_shortlist": true,
+                    "shortlist-cond-n": 100,
+                    "shortlist-freq-n": 100,
+                    "shortlist-lang-pair": "all-ru",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-SentencePieceBlockDecode": {
+                    "block-type": "SentencePieceBlock",
+                    "action": "decode",
+                    "sentence-piece-file": "MT-bi-en-ru-pl-uk-20/MT/spm.model",
+                    "asset-name": "MT-bi-en-ru-pl-uk-20"
+                },
+                "uk_UA-ru_RU-AlignmentTokenizerBlock": {
+                    "block-type": "TokenizerBlock",
+                    "locale": "ru_RU"
+                },
+                "uk_UA-ru_RU-AlignmentProcessorBlock": {
+                    "block-type": "AlignmentProcessorBlock",
+                    "avoid-crossing-words": true,
+                    "word-level-alignments": false,
+                    "tokenizer": "corenlp"
+                }
+            },
+            "language-pair-specific-settings": {
+                "ru_RU-uk_UA": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "ru_RU-uk_UA-PhraseBookBlock"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "ru_RU-uk_UA-PDecTranslatorBlock"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "spm_encode_pb_translation"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_source_spc": {
+                            "receive-from": {
+                                "control": "merge_encoded_translations",
+                                "value": "graph-input"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_1": {
+                            "receive-from": "select_source_spc:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_source_spc:match",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockEncode"
+                        },
+                        "select_source": {
+                            "receive-from": {
+                                "control": "spm_encode_src",
+                                "value": "spm_encode_src"
+                            },
+                            "block": "ru_RU-uk_UA-SelectBlock"
+                        },
+                        "select_target": {
+                            "receive-from": {
+                                "value": "spm_encode_pb_translation",
+                                "control": "spm_encode_src"
+                            },
+                            "block": "ru_RU-uk_UA-SelectBlock"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "null_2": {
+                            "receive-from": "select_source:match",
+                            "block-type": "NullBlock"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "target": "select_target:pass"
+                            },
+                            "block": "ru_RU-uk_UA-PDecForceAlignBlock"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in3": "pdec",
+                                "in1": "select_target:match",
+                                "in2": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "ru_RU-uk_UA-SentencePieceBlockDecode"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "ru_RU-uk_UA-AlignmentTokenizerBlock"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "segmentor-encode": "merge_encoded_source",
+                                "pdec-decode": "spm_decode:tokens",
+                                "segmentor-decode": "spm_decode",
+                                "tokenized": "tokenizer",
+                                "source": "graph-input"
+                            },
+                            "block": "ru_RU-uk_UA-AlignmentProcessorBlock"
+                        },
+                        "do_not_translate": {
+                            "receive-from": {
+                                "target": "alignment",
+                                "source": "graph-input"
+                            },
+                            "block-type": "DoNotTranslateBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "do_not_translate"
+                        }
+                    }
+                },
+                "uk_UA-ru_RU": {
+                    "graph": {
+                        "pb": {
+                            "receive-from": "graph-input",
+                            "block": "uk_UA-ru_RU-PhraseBookBlock"
+                        },
+                        "spm_encode": {
+                            "receive-from": "pb",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "pdec": {
+                            "receive-from": "spm_encode",
+                            "block": "uk_UA-ru_RU-PDecTranslatorBlock"
+                        },
+                        "spm_encode_pb_translation": {
+                            "receive-from": "pb:final",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "merge_encoded_translations": {
+                            "receive-from": {
+                                "in2": "pdec",
+                                "in1": "spm_encode_pb_translation"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "select_source_spc": {
+                            "receive-from": {
+                                "control": "merge_encoded_translations",
+                                "value": "graph-input"
+                            },
+                            "block-type": "SelectBlock",
+                            "match-key": "status",
+                            "match-pattern": "phrasebook_exact"
+                        },
+                        "null_1": {
+                            "receive-from": "select_source_spc:pass",
+                            "block-type": "NullBlock"
+                        },
+                        "spm_encode_src": {
+                            "receive-from": "select_source_spc:match",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockEncode"
+                        },
+                        "select_source": {
+                            "receive-from": {
+                                "control": "spm_encode_src",
+                                "value": "spm_encode_src"
+                            },
+                            "block": "uk_UA-ru_RU-SelectBlock"
+                        },
+                        "select_target": {
+                            "receive-from": {
+                                "value": "spm_encode_pb_translation",
+                                "control": "spm_encode_src"
+                            },
+                            "block": "uk_UA-ru_RU-SelectBlock"
+                        },
+                        "merge_encoded_source": {
+                            "receive-from": {
+                                "in2": "spm_encode",
+                                "in1": "spm_encode_src"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "null_2": {
+                            "receive-from": "select_source:match",
+                            "block-type": "NullBlock"
+                        },
+                        "force_align": {
+                            "receive-from": {
+                                "source": "select_source:pass",
+                                "target": "select_target:pass"
+                            },
+                            "block": "uk_UA-ru_RU-PDecForceAlignBlock"
+                        },
+                        "merge_translations_with_needed_alignment_info": {
+                            "receive-from": {
+                                "in3": "pdec",
+                                "in1": "select_target:match",
+                                "in2": "force_align"
+                            },
+                            "block-type": "MergerBlock",
+                            "merge-style": "any"
+                        },
+                        "spm_decode": {
+                            "receive-from": "merge_translations_with_needed_alignment_info",
+                            "block": "uk_UA-ru_RU-SentencePieceBlockDecode"
+                        },
+                        "tokenizer": {
+                            "receive-from": "spm_decode",
+                            "block": "uk_UA-ru_RU-AlignmentTokenizerBlock"
+                        },
+                        "alignment": {
+                            "receive-from": {
+                                "segmentor-encode": "merge_encoded_source",
+                                "pdec-decode": "spm_decode:tokens",
+                                "segmentor-decode": "spm_decode",
+                                "tokenized": "tokenizer",
+                                "source": "graph-input"
+                            },
+                            "block": "uk_UA-ru_RU-AlignmentProcessorBlock"
+                        },
+                        "do_not_translate": {
+                            "receive-from": {
+                                "target": "alignment",
+                                "source": "graph-input"
+                            },
+                            "block-type": "DoNotTranslateBlock"
+                        },
+                        "graph-output": {
+                            "receive-from": "do_not_translate"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

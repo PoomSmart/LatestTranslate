@@ -6,7 +6,7 @@
 - (NSString *)_ltLocaleIdentifier;
 @end
 
-#define AssetVersion "4"
+#define AssetVersion "6"
 #define AssetID "com.apple.MobileAsset.SpeechTranslationAssets"
 
 typedef struct __SecTask *SecTaskRef;
@@ -45,14 +45,26 @@ typedef void (^Completion)(NSInteger result);
 
 %end
 
+%hook _LTSpeechTranslationAssetInfo
+
+// Asset v6 changes the data structure, now each language pair contains an array configuration dictionaries
+// For simplicity sake, we use the first dictionary (RequiredCapabilityIdentifier = 0, Apple Neutral Engine related)
+- (id)initWithInstalledAssets:(id)arg1 catalogAssets:(id)arg2 localePair:(id)arg3 configInfo:(id)configInfo assetManager:(id)arg5 {
+    NSArray <NSDictionary *> *modernConfigInfo = configInfo[0];
+    return %orig(arg1, arg2, arg3, modernConfigInfo, arg5);
+}
+
+%end
+
 %end
 
 %group translationd_voiceType
 
-// Apple's iOS 16 overriding code ported to older iOS versions
+// Apple's iOS 16 voice type overriding code ported to older iOS versions
+// Otherwise, the translation server will simply reject the translation request
 NSInteger (*_LTVoiceTypeLocaleOverride)(NSInteger, NSLocale *);
 %hookf(NSInteger, _LTVoiceTypeLocaleOverride, NSInteger value, NSLocale *locale) {
-    if ([@[@"id_ID", @"pl_PL", @"th_TH", @"vi_VN"] containsObject:[locale _ltLocaleIdentifier]])
+    if ([@[@"id_ID", @"pl_PL", @"th_TH", @"uk_UA", @"vi_VN"] containsObject:[locale _ltLocaleIdentifier]])
         return 2;
     return %orig;
 }
